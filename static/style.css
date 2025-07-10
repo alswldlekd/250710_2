@@ -1,0 +1,159 @@
+/* 색상 팔레트: 따뜻한 살구/허니톤 */
+:root {
+  --primary: #FFAD48;           /* 살구 오렌지 */
+  --primary-light: #FFC166;     /* 허니톤 */
+  --accent: #FFD597;            /* 연한 크림 오렌지 */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 전체 배경: 은은한 따뜻한 그레이+베이지 톤 */
+body {
+  margin: 0;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  background: linear-gradient(135deg, #fdf6f0 0%, #fbead1 100%);
+  color: #333;
+}
+
+/* 헤더 영역: 투명+blur한 Glass 느낌 */
+header {
+  padding: 1rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--primary-light);
+}
+
+/* 메인 컨텐츠 래퍼 */
+main {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Glassmorphism 카드 */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Call-to-Action 버튼 (a 링크 버튼화) */
+.cta-button, button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover, button:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 입력창, 셀렉트박스 */
+input, select {
+  padding: 0.6rem;
+  width: 50%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(4px);
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* 헤더 텍스트 컬러 포인트 */
+h2, h3 {
+  color: var(--primary);
+  margin-top: 0;
+}
+
+/* 결과 출력 스타일 */
+pre {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  border: 1px solid #eee;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.result-table {
+  width: max-content;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+}
+
+.result-table th,
+.result-table td {
+  padding: 14px 20px;
+  min-width: 150px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-table th {
+  background: linear-gradient(to right, #ff914d, #ffc266);
+  color: #fff;
+  font-size: 16px;
+}
+
+.result-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.result-table td {
+  color: #333;
+  white-space: nowrap;
+}
+

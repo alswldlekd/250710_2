@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>홈 - HI-TAM</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    /* 현황표 테이블 전용 스타일 */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
+
+    .result-table {
+      width: max-content;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 12px;
+    }
+
+    .result-table th,
+    .result-table td {
+      padding: 14px 20px;
+      min-width: 150px;
+      text-align: center;
+      font-size: 15px;
+      border-bottom: 1px solid #ddd;
+      white-space: nowrap;
+    }
+
+    .result-table th {
+      background: linear-gradient(to right, #ff914d, #ffc266);
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .result-table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .result-table td {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏥 HI-TAM</h1>
+    <nav>
+      <a href="/">홈</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="glass">
+        <h2>🏥 병원 광고 분석기</h2>
+        <a class="cta-button" href="/analyze">광고 분석하러 가기 →</a>
+        <hr/>
+
+        <h3>📈 키워드 급등 현황판</h3>
+
+        <!-- ✅ 추가된 현황표 테이블 -->
+        <div class="table-container">
+          <table class="result-table">
+              <tr>
+                  {% for col in columns %}
+                  <th>{{ col }}</th>
+                  {% endfor %}
+              </tr>
+              {% for row in rows %}
+                  <tr>
+                  {% for col in columns %}
+                      <td>{{ row[col] }}</td>
+                  {% endfor %}
+                  </tr>
+              {% endfor %}
+          </table>
+        </div>
+    </section>
+  </main>
+</body>
+</html>
