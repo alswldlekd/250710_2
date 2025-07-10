@@ -210,6 +210,20 @@ def home():
 def analyze():
     return render_template("analyze.html")
 
+
+# ✅ 여기가 중요!!!
+@app.route("/api/analyze", methods=["POST"])
+def api_analyze():
+    data = request.get_json()
+    keyword = data.get("keyword")
+    return jsonify({"result": f"분석 결과 for {keyword}"})
+
+@app.route("/api/diagnosis", methods=["POST"])
+def api_diagnosis():
+    data = request.get_json()
+    keyword = data.get("keyword")
+    return jsonify({"result": f"진단코드 for {keyword}"})
+
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 10000))
