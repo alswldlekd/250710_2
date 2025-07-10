@@ -206,6 +206,10 @@ def home():
     rows=result_list
 )
 
+@app.route("/analyze")
+def analyze():
+    return render_template("analyze.html")
+
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 10000))
